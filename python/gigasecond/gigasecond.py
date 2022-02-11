@@ -9,5 +9,4 @@ def add(moment):
     A gigasecond is 10^9 (1,000,000,000) seconds.
     """
 
-    t1=datetime.seconds(10**9)
-    return t1+timedelta(moment)
+    return moment+timedelta(seconds=10**9)
