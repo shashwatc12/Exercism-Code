@@ -16,8 +16,8 @@ def bake_time_remaining(time):
 
 def preparation_time_in_minutes(layers):
     """
-     Function takes the number of layers you want to add to the lasagna as an argument 
-     and returns how many minutes you would spend making them.
+    Function takes the number of layers you want to add to the lasagna as an argument 
+    and returns how many minutes you would spend making them.
     """
     return PREPARATION_TIME * layers
 
