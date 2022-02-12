@@ -1,4 +1,4 @@
-from markupsafe import re
+
 
 
 def exchange_money(budget, exchange_rate):
@@ -54,11 +54,11 @@ def exchangeable_value(budget, exchange_rate, spread, denomination):
     :param denomination: int - the value of a single bill.
     :return: int - maximum value you can get.
     """
-    
 
-    return int((budget/(exchange_rate+(exchange_rate/100)))//denomination)
+    exchange_rate=exchange_rate+(spread*exchange_rate/100)    
+    denomination_number=(budget/exchange_rate)//denomination
+    return int((denomination_number*denomination))
     
-
 
 def non_exchangeable_value(budget, exchange_rate, spread, denomination):
     """
@@ -70,4 +70,5 @@ def non_exchangeable_value(budget, exchange_rate, spread, denomination):
     :return: int non-exchangeable value.
     """
 
-    return int((budget/(exchange_rate+(exchange_rate/100)))%denomination)
+    exchange_rate=exchange_rate+(spread*exchange_rate/100)
+    return int((budget/(exchange_rate))%denomination)
